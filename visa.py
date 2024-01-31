@@ -251,7 +251,7 @@ if __name__ == "__main__":
     login()
     retry_count = 0
     while 1:
-        if retry_count > 18:
+        if retry_count > 36:
             break
         try:
             print("------------------")
