@@ -1,3 +1,7 @@
+# What dumblejd changed
+update to apply to canada condition
+update get_date and get_function to work as for 1/30/2024
+
 # visa_rescheduler
 US VISA (ais.usvisa-info.com) appointment re-scheduler - Colombian adaptation
 
@@ -15,6 +19,3 @@ US VISA (ais.usvisa-info.com) appointment re-scheduler - Colombian adaptation
 ## Executing the script
 - Simply run `python3 visa.py`
 - That's it!
-
-## Acknowledgement
-Thanks to @yaojialyu for creating the initial script and to @cejaramillof for adapting it to Colombia!
