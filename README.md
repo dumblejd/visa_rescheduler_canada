@@ -1,10 +1,13 @@
+
+
+# What does this do?
+- Reschedule US VISA in Canada facility
+- Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
+- Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, remember to update MY_SCHEDULE_DATE to new date)
+
 # What dumblejd changed
 - Update for Canada condition
 - Update get_date and get_time to work as for 1/30/2024
-
-# What does this do?
-- Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
-- Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, remember to update MY_SCHEDULE_DATE to new date)
 
 ## This doesn't support group schedule
 
