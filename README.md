@@ -19,7 +19,7 @@
 
 
 ## Initial Setup
-- Create a `config.ini` file with all the details required
+- Create a `config.ini` file with all the details required (don't create a txt file named config.ini, it doesn't work, the file type is ini)
 - Install the required python packages: `pip3 install -r requirements.txt`
 - update webdriver `pip install --upgrade webdriver_manager`
 
