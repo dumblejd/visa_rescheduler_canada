@@ -3,7 +3,7 @@
 # What does this do?
 - Reschedule US VISA in Canada facility
 - Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
-- Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, remember to update MY_SCHEDULE_DATE to new date)
+- Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, **remember to update MY_SCHEDULE_DATE to new date**
 
 # What dumblejd changed
 - Update for Canada condition
@@ -24,7 +24,8 @@
 ## Initial Setup
 - Create a `config.ini` file with all the details required (don't create a txt file named config.ini, it doesn't work, the file type is ini)
 - Install the required python packages: `pip3 install -r requirements.txt`
-- update webdriver `pip install --upgrade webdriver_manager`
+- Update webdriver `pip install --upgrade webdriver_manager`
+- **Remember to update MY_SCHEDULE_DATE to correct/new date**
 
 ## Modify retry count number or other value if you want it to run longer/more frequent
 ### if you set it run too frequent, you will get banned for hours from the website
