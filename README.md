@@ -1,5 +1,5 @@
 # What dumblejd changed
-update to apply to canada condition
+update to apply to Canada condition
 update get_date and get_function to work as for 1/30/2024
 
 ## Prerequisites
