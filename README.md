@@ -25,7 +25,7 @@
 
 ## Modify retry count number or other value if you want it to run longer/more frequent
 ### if you set it run too frequent, you will get banned for hours from the website
- - `if retry_count > 36:` 36 * RETRY_TIME = 36 * 600 seconds = 360 min = 6 hrs
+ - RETRY_COUNT = 36  # retry wait time = RETRY_COUNT * RETRY_TIME = 36 * 600 seconds = 360 min = 6 hrs
  - STEP_TIME = 0.5  # time between steps (interactions with forms): 0.5 seconds
  - RETRY_TIME = 60*10  # wait time between retries/checks for available dates: 10 minutes
  - EXCEPTION_TIME = 60*30  # wait time when an exception occurs: 30 minutes
