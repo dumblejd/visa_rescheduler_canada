@@ -33,3 +33,38 @@
 ## Executing the script
 - Simply run `python3 visa.py`
 - That's it!
+
+
+## Example log
+```
+['USVISA', 'CHROMEDRIVER', 'PUSHOVER', 'SENDGRID']
+
+DevTools listening on ws://127.0.0.1:14984/devtools/browser/752f1e94-1bc1-4c6e-8949-39fbf143e0f1
+Login start...
+        click bounce
+        input email
+        input pwd
+        click privacy
+        commit
+        login successful!
+------------------
+2024-01-30 20:47:58.902670
+Retry count: 0
+
+Available dates:
+2025-03-12       business_day: True
+2025-03-13       business_day: True
+2025-03-14       business_day: True
+2025-03-18       business_day: True
+2025-03-20       business_day: True
+
+Checking for an earlier date:
+Is 2025-02-18 00:00:00 > 2025-03-12 00:00:00:   False
+Is 2025-02-18 00:00:00 > 2025-03-13 00:00:00:   False
+Is 2025-02-18 00:00:00 > 2025-03-14 00:00:00:   False
+Is 2025-02-18 00:00:00 > 2025-03-18 00:00:00:   False
+Is 2025-02-18 00:00:00 > 2025-03-20 00:00:00:   False
+
+New date: None
+going to sleep RETRY_TIME 600
+```
