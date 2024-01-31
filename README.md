@@ -24,7 +24,7 @@
 - update webdriver `pip install --upgrade webdriver_manager`
 
 ## Modify retry count number or other value if you want it to run longer/more frequent
- - `if retry_count > 18:`
+ - `if retry_count > 36:` 36 * RETRY_TIME = 36 * 600 seconds = 360 min = 6 hrs
  - STEP_TIME = 0.5  # time between steps (interactions with forms): 0.5 seconds
  - RETRY_TIME = 60*10  # wait time between retries/checks for available dates: 10 minutes
  - EXCEPTION_TIME = 60*30  # wait time when an exception occurs: 30 minutes
