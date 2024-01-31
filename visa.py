@@ -19,8 +19,9 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
 
-config = configparser.ConfigParser()
-config.read('config.ini')
+config = configparser.ConfigParser() 
+config.read(r'C:\Users\Di\Desktop\visa_rescheduler-main\config.ini')
+print(config.sections())  
 
 USERNAME = config['USVISA']['USERNAME']
 PASSWORD = config['USVISA']['PASSWORD']
@@ -36,8 +37,7 @@ PUSH_USER = config['PUSHOVER']['PUSH_USER']
 LOCAL_USE = config['CHROMEDRIVER'].getboolean('LOCAL_USE')
 HUB_ADDRESS = config['CHROMEDRIVER']['HUB_ADDRESS']
 
-REGEX_CONTINUE = "//a[contains(text(),'Continuar')]"
-
+REGEX_CONTINUE = "//a[contains(text(),'Continue')]"
 
 # def MY_CONDITION(month, day): return int(month) == 11 and int(day) >= 5
 def MY_CONDITION(month, day): return True # No custom condition wanted for the new scheduled date
@@ -141,14 +141,17 @@ def do_login_action():
 
 
 def get_date():
-    driver.get(DATE_URL)
-    if not is_logged_in():
-        login()
-        return get_date()
-    else:
-        content = driver.find_element(By.TAG_NAME, 'pre').text
-        date = json.loads(content)
-        return date
+    # driver.get(DATE_URL)
+    driver.get(APPOINTMENT_URL)
+    session = driver.get_cookie("_yatri_session")["value"]
+    NEW_GET = driver.execute_script(
+        "var req = new XMLHttpRequest();req.open('GET', '"
+        + str(DATE_URL)
+        + "', false);req.setRequestHeader('Accept', 'application/json, text/javascript, */*; q=0.01');req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); req.setRequestHeader('Cookie', '_yatri_session="
+        + session
+        + "'); req.send(null);return req.responseText;"
+    )
+    return json.loads(NEW_GET)
 
 
 def get_time(date):
@@ -242,7 +245,7 @@ if __name__ == "__main__":
     login()
     retry_count = 0
     while 1:
-        if retry_count > 6:
+        if retry_count > 18:
             break
         try:
             print("------------------")
@@ -252,9 +255,9 @@ if __name__ == "__main__":
 
             dates = get_date()[:5]
             if not dates:
-              msg = "List is empty"
-              send_notification(msg)
-              EXIT = True
+                msg = "List is empty"
+                send_notification(msg)
+                # EXIT = True
             print_dates(dates)
             date = get_available_date(dates)
             print()
@@ -262,22 +265,29 @@ if __name__ == "__main__":
             if date:
                 reschedule(date)
                 push_notification(dates)
+                break
 
-            if(EXIT):
+            if EXIT:
                 print("------------------exit")
                 break
 
             if not dates:
-              msg = "List is empty"
-              send_notification(msg)
-              #EXIT = True
-              time.sleep(COOLDOWN_TIME)
+                msg = "List is empty"
+                send_notification(msg)
+                # EXIT = True
+                print(f"going to sleep COOLDOWN_TIME {COOLDOWN_TIME}")
+                time.sleep(COOLDOWN_TIME)
             else:
-              time.sleep(RETRY_TIME)
+                print(f"going to sleep RETRY_TIME {RETRY_TIME}")
+                time.sleep(RETRY_TIME)
 
-        except:
+        except Exception as e:
             retry_count += 1
+            print(f"going to sleep EXCEPTION_TIME {EXCEPTION_TIME}")
             time.sleep(EXCEPTION_TIME)
+            from traceback import format_exc
 
-    if(not EXIT):
+            send_notification("Program crashed!" + str(format_exc()))
+
+    if not EXIT:
         send_notification("HELP! Crashed.")
