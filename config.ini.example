@@ -19,7 +19,3 @@ HUB_ADDRESS = http://localhost:9515/wd/hub
 ; Get push notifications via https://pushover.net/ (optional)
 PUSH_TOKEN = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 PUSH_USER = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-[SENDGRID]
-; Get email notifications via https://sendgrid.com/ (optional)
-SENDGRID_API_KEY = 
