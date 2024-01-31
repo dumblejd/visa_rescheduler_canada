@@ -1,6 +1,6 @@
 # What dumblejd changed
-- update to apply to Canada condition
-- update get_date and get_function to work as for 1/30/2024
+- Update for Canada condition
+- Update get_date and get_time to work as for 1/30/2024
 
 # What does this do?
 - Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
