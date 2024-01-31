@@ -156,8 +156,14 @@ def get_date():
 
 def get_time(date):
     time_url = TIME_URL % date
-    driver.get(time_url)
-    content = driver.find_element(By.TAG_NAME, 'pre').text
+    session = driver.get_cookie("_yatri_session")["value"]
+    content = driver.execute_script(
+        "var req = new XMLHttpRequest();req.open('GET', '"
+        + str(time_url)
+        + "', false);req.setRequestHeader('Accept', 'application/json, text/javascript, */*; q=0.01');req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); req.setRequestHeader('Cookie', '_yatri_session="
+        + session
+        + "'); req.send(null);return req.responseText;"
+    )
     data = json.loads(content)
     time = data.get("available_times")[-1]
     print(f"Got time successfully! {date} {time}")
