@@ -2,7 +2,7 @@
 
 # What does this do?
 - Reschedule US VISA in Canada facility
-- Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
+- Run every x minutes (by default 10 mins) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
 - Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, **remember to update MY_SCHEDULE_DATE to new date**
 
 # What dumblejd changed
@@ -29,7 +29,6 @@
 
 ## Modify retry count number or other value if you want it to run longer/more frequent
 ### if you set it run too frequent, you will get banned for hours from the website
- - RETRY_COUNT = 36  # retry wait time = RETRY_COUNT * RETRY_TIME = 36 * 600 seconds = 360 min = 6 hrs
  - STEP_TIME = 0.5  # time between steps (interactions with forms): 0.5 seconds
  - RETRY_TIME = 60*10  # wait time between retries/checks for available dates: 10 minutes
  - EXCEPTION_TIME = 60*30  # wait time when an exception occurs: 30 minutes
