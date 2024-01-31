@@ -27,7 +27,7 @@
 - Update webdriver `pip install --upgrade webdriver_manager`
 - **Remember to update MY_SCHEDULE_DATE to correct/new date**
 
-## Modify retry count number or other value if you want it to run longer/more frequent
+## Modify retry count number or other value if you want it to run more frequent
 ### if you set it run too frequent, you will get banned for hours from the website
  - STEP_TIME = 0.5  # time between steps (interactions with forms): 0.5 seconds
  - RETRY_TIME = 60*10  # wait time between retries/checks for available dates: 10 minutes
