@@ -2,6 +2,10 @@
 - update to apply to Canada condition
 - update get_date and get_function to work as for 1/30/2024
 
+# What does this do?
+- Run every period of time (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschudle it
+- Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, remember to update MY_SCHEDULE_DATE to new date)
+
 ## Prerequisites
 - Having a US VISA appointment scheduled already
 - Google Chrome installed (to be controlled by the script)
