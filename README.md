@@ -36,6 +36,7 @@
  - COOLDOWN_TIME = 60*60  # wait time when temporary banned (empty list): 60 minutes
 
 ## Executing the script
+- **Remember to update MY_SCHEDULE_DATE to correct/new date**
 - Simply run `python3 visa.py`
 - That's it!
 
