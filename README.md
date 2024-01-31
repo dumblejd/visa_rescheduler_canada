@@ -5,6 +5,7 @@
 # What does this do?
 - Run every x minutes (by default 10 mins) for x hours (by default 6 hours) to compare with the date you set in config.ini MY_SCHEDULE_DATE, if it's earlier than that, reschedule it
 - Once recheduled, it will exit the program to avoid too many reschedule, if you want to run for earlier time, remember to update MY_SCHEDULE_DATE to new date)
+- People says for Canada US visa schedule, you can do max 20 rescheudle, so becareful with that
 
 ## Prerequisites
 - Having a US VISA appointment scheduled already
