@@ -1,6 +1,6 @@
 # What dumblejd changed
-update to apply to Canada condition
-update get_date and get_function to work as for 1/30/2024
+- update to apply to Canada condition
+- update get_date and get_function to work as for 1/30/2024
 
 ## Prerequisites
 - Having a US VISA appointment scheduled already
